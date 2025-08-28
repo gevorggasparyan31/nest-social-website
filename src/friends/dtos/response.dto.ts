@@ -72,7 +72,7 @@ export class GetFriendRequestsResponseDto {
   success: boolean;
 
   @ApiProperty({
-    type: [FriendRequestItemDto],
+    type: () => [FriendRequestItemDto],
     description: 'Array of friend requests',
   })
   data: FriendRequestItemDto[];
@@ -82,7 +82,7 @@ export class UpdateFriendRequestResponseDto extends BasicSuccessResponseDto {
   @ApiProperty({ example: 'The request has been accepted successfully' })
   declare message: string;
 
-  @ApiProperty({ example: null })
+  @ApiProperty({ type: Object, example: null })
   data: null;
 }
 
